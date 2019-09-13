@@ -3,17 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ButtonComponent } from './button/button.component';
-import { AaButtonModule } from './aa-button/aa-button.module';
-import { HighlightDirective } from './highlight.directive';
+import { AaButtonModule } from '@aaButtons';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestimonialsComponent,
     ButtonComponent,
-    HighlightDirective
   ],
   imports: [
     BrowserModule,

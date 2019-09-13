@@ -1,27 +1,85 @@
-# Apium
+# Apium Button Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+This project contain a button directive to set buttons styles
 
-## Development server
+## Use
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> module you want use this library
 
-## Code scaffolding
+```javascript
+import { AaButtonModule } from '@aaButtons';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  ...
+  imports: [
+    ...
+    AaButtonModule
+    ...
+  ]
+```
 
-## Build
+> In HTML file
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```html
+  <!-- In Any button tag, add aaBtn directive -->
+  <button aaBtn>Button</button>
+```
 
-## Running unit tests
+- Use of size property
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> Size has three options ( small, medium, large ) , if size property isn't set medium by default
 
-## Running end-to-end tests
+```html
+  <button aaBtn size="small">small</button>
+  <button aaBtn size="medium"> Medium </button>
+  <button aaBtn size="large"> Large </button>
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Use of color property
 
-## Further help
+> Color has three options ( primary, secondary, danger ) default value is primary
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```html
+  <button aaBtn color="primary"> default </button>
+  <button aaBtn color="secondary"> secondary </button>
+  <button aaBtn color="danger"> danger </button>
+```
+
+- Use of type property
+
+> Type property has three options ( default, outline, ghost ), default value is default
+
+```html
+  <button aaBtn type="outline" color="primary"> outline </button>
+  <button aaBtn color="secondary"> secondary </button>
+  <button aaBtn type="ghost" color="danger"> danger </button>
+```
+
+- Use of Icon property
+
+> You can set any name of font awesome icon that exist in free version
+
+```html
+  <button aaBtn color="primary" icon="camera"> Camera </button>
+  <button aaBtn color="secondary" icon="search">  Search </button>
+  <button aaBtn color="danger" icon="star"> Star </button>
+```
+
+- Use of slot property
+
+> This property only works if icon property is setted and it has three options ( left, right, icon-only ) the funcionality of this property is for positioning the icon in button label, default value is Right.
+
+> Note: icon-only property remove other text seted in button tag 
+
+```html
+  <button aaBtn type="ghost" color="primary" icon="camera" slot="right"> Camera </button>
+  <button aaBtn type="ghost" color="secondary" icon="search" slot="left"> search </button>
+
+  <!--  both are the same -->
+  <button aaBtn type="ghost" color="danger" icon="star"></button> 
+    or 
+  <button aaBtn type="ghost" color="danger" icon="star" slot="icon-only"> star </button>
+```
+
+> Any convination of this params can be used if aaBtn directive is setted in some tag Button
+
